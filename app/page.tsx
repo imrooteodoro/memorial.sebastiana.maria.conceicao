@@ -54,7 +54,6 @@ export default function Home() {
         <footer className="mt-24 pt-8 border-t border-stone-200 text-center text-stone-400 text-sm">
           <p>Sempre em nossos corações</p>
           <p className="mt-2">Memorial de Sebastiana Maria Conceição — 2025</p>
-          <p>Desenvolvido com ❤️ pelo seu neto <a href="https://github.com/imrooteodoro" target="_blank" rel="noopener noreferrer">Adelson</a></p>
         </footer>
       </main>
     </div>

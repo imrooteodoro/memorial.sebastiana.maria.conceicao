@@ -33,7 +33,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="relative w-full h-[60vh] flex flex-col items-center justify-center overflow-hidden bg-stone-100">
+    <header className="relative w-full h-[70vh] md:h-[60vh] flex flex-col items-center justify-center overflow-hidden bg-stone-100">
       <audio 
         ref={audioRef} 
         src={`${basePath}/music/raridade.mp3`} 
@@ -50,30 +50,30 @@ export default function Header() {
         />
       </div>
 
-      <div className="z-10 text-center px-4">
-        <div className="mb-6 inline-block p-1 rounded-full border-2 border-stone-300">
+      <div className="z-10 text-center px-6">
+        <div className="mb-4 md:mb-6 inline-block p-1 rounded-full border-2 border-stone-300">
           <Image
             src={`${basePath}/imgs/vovo.png`} 
             alt="Sebastiana Maria Conceição"
             width={160}
             height={160}
-            className="rounded-full object-cover border-4 border-white shadow-lg"
+            className="rounded-full object-cover border-4 border-white shadow-lg w-32 h-32 md:w-40 md:h-40"
           />
         </div>
         
-        <h1 className="text-4xl md:text-5xl font-serif text-stone-800 tracking-wide">
+        <h1 className="text-2xl md:text-5xl font-serif text-stone-800 tracking-wide leading-tight">
           Sebastiana Maria Conceição
         </h1>
         
-        <div className="mt-4 flex items-center justify-center gap-4 text-stone-500 italic">
-          <span className="h-[1px] w-12 bg-stone-300"></span>
-          <p className="text-lg">02/01/1954 — 23/12/2025</p>
-          <span className="h-[1px] w-12 bg-stone-300"></span>
+        <div className="mt-3 md:mt-4 flex items-center justify-center gap-3 md:gap-4 text-stone-500 italic">
+          <span className="h-[1px] w-8 md:w-12 bg-stone-300"></span>
+          <p className="text-sm md:text-lg whitespace-nowrap">02/01/1954 — 23/12/2025</p>
+          <span className="h-[1px] w-8 md:w-12 bg-stone-300"></span>
         </div>
         
-        <p className="mt-6 text-stone-600 font-light italic max-w-md mx-auto">
+        <p className="mt-6 text-stone-600 font-light italic max-w-xs md:max-w-md mx-auto text-sm md:text-base leading-relaxed">
           "Combati o bom combate, acabei a carreira, guardei a fé." <br/>
-          <span className="text-sm">II Timóteo 4:7</span>
+          <span className="text-xs md:text-sm font-semibold not-italic">II Timóteo 4:7</span>
         </p>
       </div>
 
