@@ -67,7 +67,7 @@ export default function Header() {
         
         <div className="mt-3 md:mt-4 flex items-center justify-center gap-3 md:gap-4 text-stone-500 italic">
           <span className="h-[1px] w-8 md:w-12 bg-stone-300"></span>
-          <p className="text-sm md:text-lg whitespace-nowrap">02/01/1954 — eternamente em nossas memórias</p>
+          <p className="text-sm md:text-lg whitespace-nowrap">02/01/1954 — eternamente em nossos corações</p>
           <span className="h-[1px] w-8 md:w-12 bg-stone-300"></span>
         </div>
         
