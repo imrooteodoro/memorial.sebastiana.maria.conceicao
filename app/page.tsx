@@ -11,7 +11,7 @@ export default function Home() {
   const photosDirectory = path.join(process.cwd(), 'public/imgs/vozinha-fotos');
   
   let filenames: string[] = [];
-  
+  //comentario teste
   try {
     filenames = fs.readdirSync(photosDirectory)
       .filter(file => {
