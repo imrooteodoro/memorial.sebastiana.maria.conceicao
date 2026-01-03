@@ -4,7 +4,7 @@ import Header from "@/components/header";
 import PhotoCarousel from "@/components/photo-carousel";
 import Image from "next/image";
 
-const basePath = '/memorial.sebastiana.maria.conceicao';
+const basePath = '/memorial.sebastiana.maria-conceicao';
 
 export default function Home() {
   const photosDirectory = path.join(process.cwd(), 'public', 'imgs', 'vozinha-fotos');
