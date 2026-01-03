@@ -6,35 +6,31 @@ import Image from "next/image";
 const basePath = '/memorial.sebastiana.maria-conceicao';
 
 const playlist = [
-  "raridade.mp3",
+  "mas-eu-te-amo.mp3",        
+  "eu-so-quero-adorar.mp3",   
+  "raridade.mp3",             
   "acalma-o-meu-coracao.mp3", 
   "cancao-do-ceu.mp3",
   "primeira-essencia.mp3",
-  "promessa.mp3"
+  "promessa.mp3",
 ];
 
 export default function Header() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [currentTrack, setCurrentTrack] = useState("");
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Função para sortear e trocar a música
+  const currentTrack = `${basePath}/music/${playlist[currentIndex]}`;
+
   const playNextSong = () => {
-    const randomIndex = Math.floor(Math.random() * playlist.length);
-    const newTrack = `${basePath}/music/${playlist[randomIndex]}`;
-    
-    // Evita sortear a mesma música que está tocando agora (opcional)
-    if (newTrack === currentTrack && playlist.length > 1) {
-      playNextSong();
-      return;
-    }
-    
-    setCurrentTrack(newTrack);
+    setCurrentIndex((prevIndex) => {
+      if (prevIndex === playlist.length - 1) {
+        return 0;
+      }
+      return prevIndex + 1;
+    });
   };
 
   useEffect(() => {
-    // Sorteia a primeira música ao carregar a página
-    playNextSong();
-
     const playAudio = () => {
       if (audioRef.current) {
         audioRef.current.play()
@@ -60,15 +56,13 @@ export default function Header() {
 
   return (
     <header className="relative w-full h-[70vh] md:h-[60vh] flex flex-col items-center justify-center overflow-hidden bg-stone-100">
-      {currentTrack && (
-        <audio 
-          ref={audioRef} 
-          src={currentTrack} 
-          onEnded={playNextSong}
-          autoPlay
-          preload="auto"
-        />
-      )}
+      <audio 
+        ref={audioRef} 
+        src={currentTrack} 
+        onEnded={playNextSong} 
+        autoPlay
+        preload="auto"
+      />
 
       <div className="absolute inset-0 z-0 opacity-20">
         <Image
