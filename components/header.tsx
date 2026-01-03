@@ -1,14 +1,26 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 const basePath = '/memorial.sebastiana.maria-conceicao';
 
+const playlist = [
+  "raridade.mp3",
+  "acalma-o-meu-coracao.mp3", 
+  "cancao-do-ceu.mp3",
+  "primeira-essencia.mp3",
+  "promessa.mp3"
+];
+
 export default function Header() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [currentTrack, setCurrentTrack] = useState("");
 
   useEffect(() => {
+    const randomIndex = Math.floor(Math.random() * playlist.length);
+    setCurrentTrack(`${basePath}/music/${playlist[randomIndex]}`);
+
     const playAudio = () => {
       if (audioRef.current) {
         audioRef.current.play()
@@ -34,12 +46,14 @@ export default function Header() {
 
   return (
     <header className="relative w-full h-[70vh] md:h-[60vh] flex flex-col items-center justify-center overflow-hidden bg-stone-100">
-      <audio 
-        ref={audioRef} 
-        src={`${basePath}/music/raridade.mp3`} 
-        loop 
-        preload="auto"
-      />
+      {currentTrack && (
+        <audio 
+          ref={audioRef} 
+          src={currentTrack} 
+          loop 
+          preload="auto"
+        />
+      )}
 
       <div className="absolute inset-0 z-0 opacity-20">
         <Image
