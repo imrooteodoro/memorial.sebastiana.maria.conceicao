@@ -6,6 +6,8 @@ import Image from "next/image";
 const basePath = '/memorial.sebastiana.maria-conceicao';
 
 const playlist = [
+  "face-a-face.mp3",
+  "na-eternidade.mp3",
   "mas-eu-te-amo.mp3",        
   "eu-so-quero-adorar.mp3",
   "acalma-o-meu-coracao.mp3",
