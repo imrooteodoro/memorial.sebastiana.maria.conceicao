@@ -1,6 +1,9 @@
 import Header from "@/components/header";
 import Image from "next/image";
 
+
+const basePath = '/memorial.sebastiana.maria.conceicao';
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-stone-50/30"> 
@@ -32,7 +35,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <div className="aspect-square bg-stone-200 rounded-lg overflow-hidden relative group cursor-pointer">
                <Image
-                src="/imgs/vozinha-e-mamae.png"
+                src={`${basePath}/imgs/vozinha-e-mamae.png`}
                 alt="Memorial 1"
                 fill
                 className="object-cover"

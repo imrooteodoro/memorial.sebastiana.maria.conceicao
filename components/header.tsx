@@ -1,22 +1,23 @@
 import Image from "next/image";
 
+const basePath = '/memorial.sebastiana.maria.conceicao';
 
 export default function Header() {
   return (
     <header className="relative w-full h-[60vh] flex flex-col items-center justify-center overflow-hidden bg-stone-100">
       <div className="absolute inset-0 z-0 opacity-20">
         <Image
-          src="/imgs/familia-filhos.png" 
+          src={`${basePath}/imgs/familia-filhos.png`} 
           alt="Fundo Memorial"
           fill
           className="object-cover filter grayscale"
         />
       </div>
-     <audio src="/music/raridade.mp3" autoPlay loop className="hidden" />
+     <audio src={`${basePath}/music/raridade.mp3`} autoPlay loop className="hidden" />
       <div className="z-10 text-center px-4">
         <div className="mb-6 inline-block p-1 rounded-full border-2 border-stone-300">
           <Image
-            src="/imgs/vovo.png" 
+            src={`${basePath}/imgs/vovo.png`} 
             alt="Sebastiana Maria Conceição"
             width={160}
             height={160}
