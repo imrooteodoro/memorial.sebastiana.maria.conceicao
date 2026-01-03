@@ -7,7 +7,7 @@ const basePath = '/memorial.sebastiana.maria.conceicao';
 
 export default function Home() {
  
-  const photosDirectory = path.join(process.cwd(), 'imgs/voziha-fotos');
+  const photosDirectory = path.join(process.cwd(), 'public/imgs/vozinha-fotos');
   
   let filenames: string[] = [];
   
