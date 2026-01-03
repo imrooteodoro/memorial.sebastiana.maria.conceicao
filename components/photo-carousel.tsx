@@ -19,23 +19,23 @@ export default function PhotoCarousel({ filenames, basePath }: Props) {
 
   return (
     <div className="w-full relative">
-      
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex touch-pan-y -ml-4"> 
-          {filenames.map((name) => (
+          {filenames.map((name, index) => (
             <div 
               key={name} 
-              
               className="flex-[0_0_100%] min-w-0 md:flex-[0_0_50%] lg:flex-[0_0_33.33%] pl-4"
             >
-              <div className="relative aspect-square md:aspect-[4/3] w-full overflow-hidden rounded-xl border border-stone-200 shadow-sm bg-white">
+            
+              <div className="relative aspect-square md:aspect-[4/3] w-full overflow-hidden rounded-xl border border-stone-200 shadow-sm bg-stone-100/50">
                 <Image
                   src={`${basePath}/imgs/vozinha-fotos/${name}`}
                   alt="Retrato memorial"
                   fill
-                  priority={filenames.indexOf(name) < 3}
+                  priority={index < 3}
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover"
+                
+                  className="object-contain p-2" 
                 />
               </div>
             </div>
