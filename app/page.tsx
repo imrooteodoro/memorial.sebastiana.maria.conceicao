@@ -42,6 +42,13 @@ export default function Home() {
               />
             </div>
             <div className="aspect-square bg-stone-200 rounded-lg overflow-hidden relative group cursor-pointer">
+
+                 <Image
+                src={`${basePath}/imgs/maninha-vozinha-eu.jpeg`}
+                alt="Memorial 1"
+                fill
+                className="object-cover"
+              />
               
             </div>
             <div className="aspect-square bg-stone-200 rounded-lg overflow-hidden relative group cursor-pointer"></div>
