@@ -23,26 +23,28 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-stone-50/30 flex flex-col"> 
+    <div className="min-h-screen bg-stone-50/30 flex flex-col overflow-x-hidden"> 
       <Header />
 
-      <main className="flex-grow max-w-4xl mx-auto px-6 py-16">
-        <section className="mb-20 text-center">
+      <main className="flex-grow max-w-4xl mx-auto px-6 py-12 md:py-16 w-full">
+        {/* Seção Essência */}
+        <section className="mb-16 md:mb-20 text-center">
           <h2 className="text-3xl font-serif text-stone-700 mb-8 italic">
             Sua Essência
           </h2>
-          <div className="grid md:grid-cols-2 gap-12 items-center text-left">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center text-left">
             <p className="text-stone-600 leading-relaxed text-lg">
               Dona Sebastiana era conhecida por sua força inabalável e seu coração sempre aberto. 
               Sua casa nunca estava vazia e sua mesa sempre tinha lugar para mais um. 
               Este memorial é um espaço para guardarmos juntos as sementes que ela plantou em cada um de nós.
             </p>
-            <div className="bg-white p-8 border-l-4 border-stone-300 italic text-stone-500 shadow-sm">
+            <div className="bg-white p-6 md:p-8 border-l-4 border-stone-300 italic text-stone-500 shadow-sm">
               "A saudade é o amor que fica."
             </div>
           </div>
         </section>
 
+        {/* Seção Galeria */}
         <section className="mb-20">
           <div className="flex items-center justify-between mb-8 border-b border-stone-200 pb-2">
             <h2 className="text-2xl font-serif text-stone-700">Retratos de uma Vida</h2>
@@ -53,13 +55,16 @@ export default function Home() {
           
           {filenames.length > 0 ? (
             <>
-              {/* Carrossel Animado */}
-              <div className="mb-16">
+              <div className="mb-16 w-full max-w-lg md:max-w-none mx-auto">
                 <PhotoCarousel filenames={filenames} basePath={basePath} />
               </div>
 
-              {/* Galeria Completa (Grade de fotos no final) */}
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+              <div className="mb-6">
+                <h3 className="text-stone-500 font-serif italic text-sm border-l-2 border-stone-200 pl-3">
+                </h3>
+              </div>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                 {filenames.map((name) => (
                   <div 
                     key={name} 
@@ -85,9 +90,10 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="mt-24 pt-8 pb-12 border-t border-stone-200 text-center text-stone-400 text-sm">
-        <p>Sempre em nossos corações</p>
-        <p className="mt-2">Memorial de Sebastiana Maria Conceição — 2025</p>
+      {/* Footer Integrado */}
+      <footer className="mt-auto pt-10 pb-12 border-t border-stone-200 bg-white/50 text-center text-stone-400 text-sm">
+        <p className="font-serif italic text-stone-500 mb-2">Sempre em nossos corações</p>
+        <p>Memorial de Sebastiana Maria Conceição — 2025</p>
       </footer>
     </div>
   );
