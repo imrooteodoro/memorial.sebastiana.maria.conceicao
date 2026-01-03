@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 
-const basePath = '/memorial.sebastiana.maria.conceicao';
+const basePath = '/memorial.sebastiana.maria-conceicao';
 
 export default function Header() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
